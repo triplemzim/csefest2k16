@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from cseday2016 import views
 
 urlpatterns = [
