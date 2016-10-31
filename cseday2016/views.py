@@ -1,8 +1,9 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.views.decorators.csrf import requires_csrf_token
+from cseday2016.form_message import SubmitMessage
 
-
-
+@requires_csrf_token
 def index(request):
     """
     loads the initial web page showing the client the basic view of the website
@@ -14,3 +15,15 @@ def index(request):
     context = RequestContext(request)
     error = {'has_error':False}
     return render_to_response('index.html', {'error':error}, context)
+
+
+
+@requires_csrf_token
+def submit(request):
+
+    error = {'has_error':False}
+    # form = SubmitMessage(request.POST)
+    # if form.is_valid():
+    #     return render_to_response('index.html',{},context_instance = RequestContext(request))
+    # else:
+    return render_to_response('index.html', {'error':error},context = RequestContext(request))
