@@ -31,7 +31,7 @@ def index(request):
 # def submit(request):
 #     print("\n\nIn submit method\n\n")
 
-<<<<<<< HEAD
+#<<<<<<< HEAD #commented by masum
 #@requires_csrf_token
 def submit(request):
 
@@ -41,7 +41,7 @@ def submit(request):
     #     return render_to_response('index.html',{},context_instance = RequestContext(request))
     # else:
     return render_to_response('<p>I am the boss!</p>', {'error':error},context = RequestContext(request))
-=======
+#======= # Who added these syntaxes? Commented by masum
 #     error = {'has_error': False}
 #     # form = SubmitMessage(request.POST)
 #     # if form.is_valid():
@@ -55,4 +55,4 @@ def submit(request):
     # # context = RequestContext(request)
     # error = {'has_error': False}
     # return render(request, 'index.html', {'error': error})
->>>>>>> 06a32668951e2d175eccbbee19fa46f6e5853d91
+# >>>>>>> 06a32668951e2d175eccbbee19fa46f6e5853d91 # commented by Masum
