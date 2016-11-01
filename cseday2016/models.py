@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
+
     """Model referring to user profile,based on the top of django User model
     about_me->about me text about the user
     picture->profile picture of the user
@@ -16,7 +17,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
 
     # The additional attributes we wish to include.
-    pw=models.CharField(max_length=10, blank=True)
+    pw = models.CharField(max_length=10, blank=True)
     about_me = models.CharField(blank=True, max_length=300)
     picture = models.ImageField(upload_to='profile_images', blank=True)
     last_location = models.CharField(blank=True, max_length=300)
@@ -27,14 +28,17 @@ class UserProfile(models.Model):
         ('p', 'pending'),
         ('s', 'suspended')
     )
-    verification_status = models.CharField(blank=False, max_length=2, choices=verification_status_choices, default='p')
-    verification_code = models.CharField(blank=False, max_length=128, default='123456')
+    verification_status = models.CharField(
+        blank=False, max_length=2, choices=verification_status_choices, default='p')
+    verification_code = models.CharField(
+        blank=False, max_length=128, default='123456')
 
     def __unicode__(self):
         return self.user.username
 
 
 class Location(models.Model):
+
     """
     Model referring to the different locations of the users.
     """
@@ -43,14 +47,14 @@ class Location(models.Model):
     location_long = models.FloatField(blank=True, null=True)
 
 
-#class Log(models.Model):
+# class Log(models.Model):
 #    logger = models.ForeignKey(UserProfile)
 #    logtext = models.CharField(blank=True, max_length=50)
 #    timestamp = models.DateTimeField(blank=True)
 
 
-
 class Post(models.Model):
+
     """
     Model referring to the user posts.
     """
@@ -66,20 +70,33 @@ class Post(models.Model):
         ordering = ['-post_time']
 
 
-
 class Block(models.Model):
+
     """
     Model referring to the blocks
     """
     blocker = models.ForeignKey(UserProfile, related_name='user_who_blocked')
-    blocked = models.ForeignKey(UserProfile, related_name='user_who_got_blocked')
+    blocked = models.ForeignKey(
+        UserProfile, related_name='user_who_got_blocked')
     block_time = models.DateTimeField(blank=True)
 
 
 class Profileposts:
+
     """
     A helper class for rendering profile posts
     """
+
     def __init__(self):
         self.post_info = Post()
-        self.alignment=""
+        self.alignment = ""
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    email = models.CharField(max_length=50, blank=True, null=True)
+    message = models.CharField(max_length=500, blank=True, null=True)
+    
+    # for python 3. for python 2 use unicode
+    def __str__(self):
+        return self.name
