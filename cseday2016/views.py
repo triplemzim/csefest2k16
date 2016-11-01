@@ -18,7 +18,7 @@ def index(request):
 
 
 
-@requires_csrf_token
+#@requires_csrf_token
 def submit(request):
 
     error = {'has_error':False}
@@ -26,4 +26,4 @@ def submit(request):
     # if form.is_valid():
     #     return render_to_response('index.html',{},context_instance = RequestContext(request))
     # else:
-    return render_to_response('index.html', {'error':error},context = RequestContext(request))
+    return render_to_response('<p>I am the boss!</p>', {'error':error},context = RequestContext(request))

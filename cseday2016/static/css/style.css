@@ -797,6 +797,9 @@ footer {
 
 }
 
-
+.g-recaptcha {
+  width: 300px;
+  margin: 0 auto;
+}
 
 

@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+NORECAPTCHA_SITE_KEY = '6LecvQoUAAAAADExVS8rclGuzPSvptqHs4p8r0eE'
+NORECAPTCHA_SECRET_KEY = '6LecvQoUAAAAADR5-6xF3nN918Ha7sj8R21V1lNu'
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -38,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cseday2016',
+    'nocaptcha_recaptcha'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -25,7 +25,7 @@
 	<!-- Google web font  -->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px|Varela+Round" rel="stylesheet">
-	
+	<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 </head>
 <body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
@@ -205,10 +205,10 @@
 
         <div class="col-lg-offset-1 col-lg-10 section-title wow fadeInUp" data-wow-delay="0.4s">
           <h1>Send a message</h1>
-          <p>Nunc suscipit ante in lectus laoreet, nec pharetra diam dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+          <p>Send us your query, appreciation or Love! We would be in touch soon.</p>
         </div>
 
-        <form action="#" method="post" class="wow fadeInUp" data-wow-delay="0.8s">{% csrf_token %}
+        <form action="message" method="post" class="wow fadeInUp" data-wow-delay="0.8s">{% csrf_token %}
           <div class="col-md-6 col-sm-6">
             <input name="name" type="text" class="form-control" id="name" placeholder="Name">
           </div>
@@ -218,10 +218,13 @@
           <div class="col-md-12 col-sm-12">
             <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
           </div>
-          <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-            
+          <div class="col-xs-12">
+            <div class=" col-md-6 col-xs-12">
+              <div class="g-recaptcha" data-theme="dark" data-sitekey="6LecvQoUAAAAADExVS8rclGuzPSvptqHs4p8r0eE"></div> <!--reCAPCHA DIV HERE-->
+            </div>
+            <div class="col-md-6 col-xs-12">
             <input type="submit" class="form-control" value="SEND MESSAGE">
-            
+            </div>
           </div>
         </form>
 
@@ -252,7 +255,10 @@
 				<p class="wow fadeInUp"  data-wow-delay="1s" >Copyright &copy; CSE DAY 2016 |
                 Design: <a href="http://www.facebook.com/farabi.mahmud" title="farabi mahmud" target="_blank">Farabi Mahmud</a>
                 |
-                <a href="http://www.facebook.com/triplemzim" title="muhim muktadir" target="_blank">Muhim Muktadir</a></p>
+                <a href="http://www.facebook.com/triplemzim" title="muhim muktadir" target="_blank">Muhim Muktadir</a>
+                |
+                <a href="https://www.facebook.com/masum006" target="_blank">Mahmudul Hasan Masum</a>
+                </p>
                 
 			</div>
 			
