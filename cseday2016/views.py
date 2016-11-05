@@ -16,12 +16,17 @@ def index(request):
     """
     print("\nIn Index method\n")
     if(request.method == 'POST'):
-        print("The form has been posted")
-        name = request.POST.get('name', 'Undefined')
-        email = request.POST.get('email', 'Undefined')
-        message = request.POST.get('message', 'Undefined')
-        print(name, email, message)
-        Contact.objects.create(name=name, email=email, message=message)
+        value_capt= request.POST.get('g-recaptcha-response','Undefined')
+
+        
+        if(len(value_capt)>5):
+            print("The form has been posted")
+            name = request.POST.get('name', 'Undefined')
+            email = request.POST.get('email', 'Undefined')
+            message = request.POST.get('message', 'Undefined')
+            print(name, email, message)
+
+            Contact.objects.create(name=name, email=email, message=message)
 
     context = RequestContext(request)
     error = {'has_error': False}
