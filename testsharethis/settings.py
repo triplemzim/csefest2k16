@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cseday2016',
-    'nocaptcha_recaptcha'
+    'nocaptcha_recaptcha',
 )
 
 MIDDLEWARE_CLASSES = (
