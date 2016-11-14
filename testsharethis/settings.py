@@ -13,22 +13,22 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-NORECAPTCHA_SITE_KEY = '6LecvQoUAAAAADExVS8rclGuzPSvptqHs4p8r0eE'
-NORECAPTCHA_SECRET_KEY = '6LecvQoUAAAAADR5-6xF3nN918Ha7sj8R21V1lNu'
+NORECAPTCHA_SITE_KEY = '6Ld44wsUAAAAADfVpalx0gZzwstU14JG0TEj4MIH'
+NORECAPTCHA_SECRET_KEY = '6Ld44wsUAAAAAFBZSsj-FHixfL3WfPjhczvaVFD8'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'rp)lt!giu0d1=w^*e2#ly=xv=j(g8xe9x$ki+29m%r65f@ra7y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://35.154.28.176', 'http://35.154.28.176/',
+ u'35.154.28.176']
 
 
 # Application definition
@@ -106,7 +106,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
