@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaderboard</title>
+</head>
+<body>
+<a href="/picpuzzle"> Logout! </a>
+{% for user in userlist %}
+	<h2>{{user.user.first_name}} : {{user.level}}</h2>
+
+{% endfor %}
+</body>
+</html>

@@ -18,16 +18,23 @@ Including another URLconf
 """
 
 from django.conf.urls import include, url
-from django.contrib import admin
+
 from django.conf.urls.static import static
+from . import views
+
+app_name='picturepuzzle'
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'cseday2016/', include('cseday2016.urls')),
-    url(r'^$', include('cseday2016.urls')),
-    url(r'^picpuzzle/',include('picturepuzzle.urls')),
+    
+    
+    url(r'^$', views.index , name = 'index'),
+    url(r'^login$', views.Login , name = 'Login'),
+    url(r'^logout$', views.Logout , name = 'Logout'),
+    url(r'^signup$', views.Signup , name = 'Signup'),
+    url(r'^leaderboard$', views.Leaderboard , name = 'Leaderboard'),
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
 
+]
         
 

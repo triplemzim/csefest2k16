@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Welcome to the picture puzzle contest</title>
+</head>
+<body>
+
+<a href="leaderboard"> Leaderboard</a>
+
+<img src="{{ puzzle.photo.url }}" alt="Puzzle" width="450" height="450">
+<p>Here we will show you the puzzles</p>
+
+<h2>Enter your answer</h2>
+  <form action="" method="POST">
+  {% csrf_token %}
+    <input name="answer" id = "answer" type="text" title="Answer" placeholder="Solution" />
+    
+    <button type="submit" class="btn">Submit</button>
+    
+  </form>
+<a href="logout"> Logout </a>
+</body>
+</html>
