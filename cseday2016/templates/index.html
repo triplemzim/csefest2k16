@@ -30,6 +30,7 @@
 	<!-- Google web font  -->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px|Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
 	<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 </head>
 
@@ -69,6 +70,7 @@
             <li><a href="#top" class="smoothScroll"><span>Home</span></a></li>
             <li><a href="#about" class="smoothScroll"><span>About</span></a></li>
               <li><a href="#events" class="smoothScroll"><span>Event Schedule</span></a></li>
+              <li><a href="#picpuzzle" class="smoothScroll"><span>Picture Puzzle</span></a></li>
             <li><a href="#contact" class="smoothScroll"><span>Contact</span></a></li>
           </ul>
        </div>
@@ -183,6 +185,22 @@
       </div>
       <!-- end team carousel -->
 
+      <!--Picture puzzle-->
+  <div id="picpuzzle">
+    <img id="puzzle" src="{% static 'images/picpuzzle.png' %}">
+  <script language="javascript">
+    var popupWindow = null;
+    function centeredPopup(url,winName,w,h,scroll){
+    LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+    TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+    settings =
+    'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+    popupWindow = window.open(url,winName,settings)
+    }
+  </script>
+    <h2 class="textOverImage"><a href="http://www.google.com" onclick="centeredPopup(this.href,'myWindow','700','300','yes');return false">Ready to puzzle your brain?</a></h2>
+  </div>
+
     </div>
     <div class="row">
         <div class="span">
@@ -194,6 +212,8 @@
         </div>
     </div>
   </div>
+
+
 </section>
 
 <!-- Contact section -->
