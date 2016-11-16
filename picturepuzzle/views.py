@@ -41,7 +41,7 @@ def index(request):
 	return render_to_response('picturepuzzle/pichome.html',{'puzzle':cur_puzzle},RequestContext(request))
 
 
-
+@login_required(login_url='/picpuzzle/login')
 def Leaderboard(request):
 	userlist = user_level.objects.order_by('-level','-Time')
 	
