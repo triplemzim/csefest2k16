@@ -1,0 +1,151 @@
+html, body{
+	font-family: 'Noto Serif', serif;
+	font-size: .9em;
+	height: 445px;
+	width: 100%;
+	margin: 0;
+	
+	background-color: rgb(48, 67, 82);
+	color: #e44c65;
+}
+
+body{
+	padding: 10px;
+}
+
+h2{
+	font-family: 'Lobster', cursive;
+}
+
+.signup-form{
+	margin: auto;
+}
+
+.form-horizontal{
+	margin-top: 30px;
+}
+
+.form-horizontal button{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.signup-header{
+	color: white;
+}
+
+#signup-btn{
+	margin-top: 20px;
+	margin-bottom: auto;
+}
+
+#signup-btn,
+#signup-btn:hover,
+#signup-btn:active,
+#signup-btn:visited,
+#signup-btn:focus {
+	margin-top: 20px;
+	color: white;
+    background-color: #e44c65;
+}
+#signup-btn:hover, #signup-btn:focus {
+    background-color: black;
+}
+
+.myCaptcha{
+	padding: 0;
+}
+.captchaAndButton{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.picform{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.hintspan{
+	font-size: 1.2em;
+}
+
+.picture{
+	width: 100%;
+	height: auto;
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.picturediv{
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	/*min-height: 100vh; /* These two lines are counted as one :-)       */
+
+	display: flex;
+	align-items: center;
+}
+
+.button-holder a{
+	margin-top: 20px;
+}
+
+.modal-body{
+	color: black;
+}
+
+
+#leader-back{
+	/*background: url(throne.jpg);*/
+	width: 100%;
+	height: 90%;
+	margin: 0 auto;
+	text-align: center;
+	background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-blend-mode: color-dodge;
+    
+}
+
+#congrats{
+	background: url(winner.jpg);
+	width: 100%;
+	height: 90%;
+	background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    text-align: center;
+}
+
+#table-style{
+	width: 60%;
+	height: 60%;
+	overflow: auto;
+	align-self: center;
+}
+
+.bodycontainer {
+ 	height: 65%; 
+ 	width: 60%; 
+ 	margin: 0 auto; 
+ 	overflow-y: auto;
+ 	font-weight: bold;
+ 	text-decoration: blink;
+ 	/*color: #90EE90;*/
+ }
+.table-scrollable { 
+	margin: 0; 
+	padding: 0; 
+}
+
+#table-head {
+ 	max-height: 90%; 
+ 	width: 60%; 
+ 	margin: 0 auto; 
+ 	overflow-y: auto;
+ 	font-weight: bold;
+ }
