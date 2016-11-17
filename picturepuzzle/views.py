@@ -43,7 +43,7 @@ def index(request):
 
 @login_required(login_url='/picpuzzle/login')
 def Leaderboard(request):
-	userlist = user_level.objects.order_by('-level','-Time')
+	userlist = user_level.objects.order_by('-level','Time')
 	
 	return render_to_response('picturepuzzle/leaderboard.html',{'userlist':userlist})
 
