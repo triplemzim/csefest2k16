@@ -1,29 +1,51 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>SignUp</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+{% extends 'picturepuzzle/base.html' %}
 
-  
-      <link rel="stylesheet" href="{% static 'picturepuzzle/css/style_signup.css' %}">
+{% block content %}
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+<div class="container">
+	<h2 class="text-center signup-header">Hurry! You are missing out!</h2>
+	<form class="form-horizontal  col-xs-offset-2"" action="" method="POST"> {%csrf_token%}
+		<!--   <button class = 'fb'><span class = 'brandico-facebook'></span>SIGN UP WITH FACEBOOK</button>
+		<hr id="seven" data-symbol="OR"> -->
+		<div class="form-group">
+			<label class="control-label col-xs-2 for="Name">Name: </label>
+			<div class="col-xs-8">
+				<input class="form-control" name="name" type="text" required placeholder="Jon Snow" id="name" />
+			</div>
+		</div>
 
-  
-</head>
+		<div class="form-group">
+			<label class="control-label col-xs-2" for="username">UserName: </label>
+			<div class="col-xs-8">
+				<input class="form-control" name="username" type="text" required placeholder="idonknow02" id="username"/>
+			</div>
+		</div>
 
-<body>
-  <form action="" method="POST"> {%csrf_token%}
-<!--   <button class = 'fb'><span class = 'brandico-facebook'></span>SIGN UP WITH FACEBOOK</button>
-  <hr id="seven" data-symbol="OR"> -->
-  	<input name="username" type="text" required placeholder="Username" id="username" />
- 	<input name="name" type="text" required placeholder="FULL NAME" id="name" />
- 	<input name="email" type="email" required placeholder="EMAIL ADDRESS" />
-    <input name = "password" id = "password" type="password" required  autocomplete="off" placeholder = "CREATE PASSWORD"/>
-    <button class = 'signup'>SIGN UP</button>
-</form>
-  
-  
-</body>
-</html>
+		<div class="form-group">
+			<label class="control-label col-xs-2" for="email">Email: </label>
+			<div class="col-xs-8">
+				<input class="form-control" id="email" name="email" type="email" required placeholder="iknownothing@winterfell.com" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="control-label col-xs-2" for="password">Password: </label>
+			<div class="col-xs-8">
+				<input class="form-control" name = "password" id = "password" type="password" required  autocomplete="off" placeholder = "Password"/>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 captchaAndButton">
+		<div class="myCaptcha col-xs-6 col-xs-offset-0">
+				<div class="g-recaptcha" data-theme="dark" data-sitekey="6Ld44wsUAAAAADfVpalx0gZzwstU14JG0TEj4MIH">
+				</div> <!--reCAPCHA DIV HERE-->
+			<!--/div-->
+		</div>
+		<!--div class="col-xs-6 col-xs-offset-4"-->
+			<button type="submit" id="signup-btn" class = 'signup btn  col-xs-3 col-xs-offset-1'>SIGN UP</button>
+		</div>
+		
+		<div class="text-center col-xs-8 col-xs-offset-2">Already have an account? <a href="login">Login</a></div>
+	</form>
+</div>
+{% endblock %}

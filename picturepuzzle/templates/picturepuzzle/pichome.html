@@ -1,24 +1,39 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-<head>
-	<title>Welcome to the picture puzzle contest</title>
-</head>
-<body>
+{% extends 'picturepuzzle/base.html' %}
 
-<a href="leaderboard"> Leaderboard</a>
+{% block content %}
+	 <form  class="form-horizontal picform col-xs-5" action="" method="POST">
+	 	<span class="glyphicon glyphicon-info-sign hintspan" data-toggle="modal" data-target="#myModal"> Hint</span>
 
-<img src="{{ puzzle.photo.url }}" alt="Puzzle" width="450" height="450">
-<p>Here we will show you the puzzles</p>
+		<!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog modal-sm">
+		      <div class="modal-content">
+		        <div class="modal-body">
+		          <p>Please donate to the developers to get a hint. :) :)<br>bKash: 01684080299<br>DBBL: 016840802995<br><br>SMS your Name with bKash/DBBL TransactionID, Picture Puzzle UserID (optional), and the level you are stuck at, to 01684080299. In a return SMS You'll be given a hint.</p>
+		          <p>It took weeks of hardwork to make this website. We would really appreciate your donation. :)</p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
 
-<h2>Enter your answer</h2>
-  <form action="" method="POST">
-  {% csrf_token %}
-    <input name="answer" id = "answer" type="text" title="Answer" placeholder="Solution" />
-    
-    <button type="submit" class="btn">Submit</button>
-    
-  </form>
-<a href="logout"> Logout </a>
-</body>
-</html>
+		<h2>Enter your answer</h2>
+		{% csrf_token %}
+		
+	    <div class="form-group col-xs-12">
+			<input class="form-control" name="answer" id = "answer" type="text" title="Answer" placeholder="Solution" />
+		</div>
+	    <button id="signup-btn" type="submit" class = 'signup btn col-xs-5 col-xs-offset-3'>Submit</button>
+	  <div class="col-xs-12 text-center level">
+	  	<h3>Your current level: {{ puzzle.id }}</h3>
+	  </div>
+		<div class="button-holder">
+			<a href="leaderboard" class="btn btn-info col-xs-5 col-xs-offset-3">Leaderboard</a>
+			<a href="logout" class="btn btn-info col-xs-5 col-xs-offset-3">Logout</a>
+		</div>
+	</form >
+
+	<div class="col-xs-7 picturediv">
+	  <img class="picture img-thumbnail"  src="{{ puzzle.photo.url }}" alt="Puzzle"><!-- width="450" height="450"-->
+	 </div>
+	
+{% endblock %}

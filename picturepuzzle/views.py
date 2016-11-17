@@ -47,6 +47,9 @@ def Leaderboard(request):
 	
 	return render_to_response('picturepuzzle/leaderboard.html',{'userlist':userlist})
 
+@login_required(login_url='/picpuzzle/login')
+def Puzzlehome(request):
+	return render_to_response('picturepuzzle/pichome.html',{})
 
 
 def Login(request):
