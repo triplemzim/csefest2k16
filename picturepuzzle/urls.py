@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^logout$', views.Logout , name = 'Logout'),
     url(r'^signup$', views.Signup , name = 'Signup'),
     url(r'^leaderboard$', views.Leaderboard , name = 'Leaderboard'),
+    url(r'^puzzlehome$', views.Puzzlehome , name = 'Puzzlehome'),
 
     
 

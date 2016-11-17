@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Leaderboard</title>
-</head>
-<body>
-<a href="logout"> Logout! </a>
-{% for user in userlist %}
-	<h2>{{user.user.first_name}} : {{user.level}}</h2>
+{% extends 'picturepuzzle/base.html' %}
 
-{% endfor %}
-</body>
-</html>
+
+{% block content %}
+<div id="leader-back">
+	<h2>Leaderboard</h2>
+	{% for user in userlist %}
+		<h4>{{user.user.first_name}} : {{user.level}}</h4>
+	{% endfor %}
+
+	<div class="button-holder">
+		<a href="pichome" class="btn btn-info col-xs-5 col-xs-offset-3">Back to Puzzles</a>
+		<a href="logout" class="btn btn-info col-xs-5 col-xs-offset-3">Logout</a>
+	</div>
+</div>
+{% endblock %}
