@@ -97,13 +97,18 @@ h2{
 	color: black;
 }
 
+
 #leader-back{
-	background: url(throne.jpg);
+	/*background: url(throne.jpg);*/
 	width: 100%;
 	height: 90%;
+	margin: 0 auto;
+	text-align: center;
 	background-size: cover;
     background-repeat:   no-repeat;
     background-position: center center;
+    background-blend-mode: color-dodge;
+    
 }
 
 #congrats{
@@ -113,4 +118,34 @@ h2{
 	background-size: cover;
     background-repeat:   no-repeat;
     background-position: center center;
+    text-align: center;
 }
+
+#table-style{
+	width: 60%;
+	height: 60%;
+	overflow: auto;
+	align-self: center;
+}
+
+.bodycontainer {
+ 	height: 65%; 
+ 	width: 60%; 
+ 	margin: 0 auto; 
+ 	overflow-y: auto;
+ 	font-weight: bold;
+ 	text-decoration: blink;
+ 	/*color: #90EE90;*/
+ }
+.table-scrollable { 
+	margin: 0; 
+	padding: 0; 
+}
+
+#table-head {
+ 	max-height: 90%; 
+ 	width: 60%; 
+ 	margin: 0 auto; 
+ 	overflow-y: auto;
+ 	font-weight: bold;
+ }

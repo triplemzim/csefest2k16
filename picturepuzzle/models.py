@@ -7,6 +7,7 @@ import datetime
 class puzzle(models.Model):
 	photo = models.ImageField(blank=False)
 	solution = models.CharField(blank=False,max_length=300)
+	number = models.IntegerField(blank=False, null=False)
 
 	def __str__(self):
 		return self.solution
@@ -16,6 +17,7 @@ class puzzle(models.Model):
 class user_level(models.Model):
 	user = models.ForeignKey(User)
 	level = models.IntegerField(blank = True, null=False)
+	score = models.IntegerField(blank = True, null=False)
 	Time = models.DateTimeField(default = datetime.datetime.now)
 	def __str__(self):
 		return self.user.username

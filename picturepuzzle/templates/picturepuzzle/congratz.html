@@ -2,7 +2,11 @@
 
 {% block content %}
 <div id="congrats">
-	<a href="leaderboard"> Leaderboard</a>
+	
 	<h1>You are the ultimate boss! {{user.first_name}}</h1>
+	<div class="button-holder">
+		<a href="leaderboard" class="btn btn-info col-xs-5 col-xs-offset-3"> Leaderboard</a>
+		<a href="logout" class="btn btn-info col-xs-5 col-xs-offset-3">Logout</a>
+	</div>
 </div>
 {% endblock %}

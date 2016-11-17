@@ -16,7 +16,7 @@ def index(request):
     """
     print("\nIn Index method\n")
     if(request.method == 'POST'):
-        value_capt= request.POST.get('g-recaptcha-response','Undefined')
+        value_capt= request.POST.get('g-recaptcha-response','')
 
         
         if(len(value_capt)>5):

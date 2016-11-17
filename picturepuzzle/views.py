@@ -21,14 +21,16 @@ def index(request):
 		
 
 
-	cur_puzzle = puzzle.objects.get(id=cur_level.level)
+	cur_puzzle = puzzle.objects.get(number=cur_level.level)
 
 
 
 	if request.method=='POST':
 		answer = request.POST.get('answer','')
+		answer = answer.lower()
 		if answer == cur_puzzle.solution:
 			cur_level.level = cur_level.level+1
+			cur_level.score = cur_level.score+1
 			cur_level.save()
 			return redirect('/picpuzzle')
 
@@ -43,7 +45,7 @@ def index(request):
 
 @login_required(login_url='/picpuzzle/login')
 def Leaderboard(request):
-	userlist = user_level.objects.order_by('-level','Time')
+	userlist = user_level.objects.order_by('-score','Time')
 	
 	return render_to_response('picturepuzzle/leaderboard.html',{'userlist':userlist})
 
@@ -85,6 +87,10 @@ def Signup(request):
 	error = {'has_error':False}
 
 	if request.method == 'POST':
+		value_capt=request.POST.get('g-recaptcha-response','')
+		if len(value_capt) < 5:
+			return redirect('/picpuzzle/signup')
+
 		username = request.POST.get('username','')
 		email = request.POST.get('email','')
 		password = request.POST.get('password','')
@@ -102,7 +108,7 @@ def Signup(request):
 			return redirect('/picpuzzle/signup',error='Username exists!')
 		user=authenticate(username=username,password=password)
 		login(request,user)
-		user_level.objects.create(user=user,level=1)
+		user_level.objects.create(user=user,level=1,score=0)
 		return redirect('/picpuzzle')
 
 
