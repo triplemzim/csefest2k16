@@ -31,6 +31,7 @@ def index(request):
 		if answer == cur_puzzle.solution:
 			cur_level.level = cur_level.level+1
 			cur_level.score = cur_level.score+1
+			cur_level.Time = datetime.datetime.now()
 			cur_level.save()
 			return redirect('/picpuzzle')
 
