@@ -27,8 +27,8 @@ SECRET_KEY = 'rp)lt!giu0d1=w^*e2#ly=xv=j(g8xe9x$ki+29m%r65f@ra7y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://35.154.6.245', 'http://35.154.6.245/',
- u'35.154.6.245','localhost']
+ALLOWED_HOSTS = ['*','http://35.154.6.245', 'http://35.154.6.245/',
+'35.154.6.245','localhost', 'cseday2016.com']
 
 
 # Application definition
